@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "ng-login-8860c": {
+      "hosting": {
+        "app": [
+          "ng-login-8860c"
+        ]
+      }
+    }
+  }
+}

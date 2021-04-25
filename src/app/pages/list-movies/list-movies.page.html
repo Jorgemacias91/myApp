@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button color="primary"
+                       menu="primerMenu">
+
+      </ion-menu-button>
+    </ion-buttons>
+    <ion-label>
+      <ion-title>Search for Movies</ion-title>
+    </ion-label>
+    <ion-buttons slot="end">
+      <ion-button [routerLink]="['/favorite']">
+        <ion-icon class="cHeart" name="heart-half-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="container">
+
+  <div class="cForm">
+      <input class="cInput" type="text" placeholder="Nombre de la película" #Title>
+      <ion-buttons slot="end">
+        <ion-button (click)="handleSubmit(Title)">
+          <ion-icon class="cIcon" name="search-outline"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+  </div>
+
+  <ion-item *ngFor="let movie of movies" >
+
+    <ion-thumbnail slot="start">
+      <img src={{movie.Poster}} [routerLink]="['/list-movies', movie.imdbID]" >
+    </ion-thumbnail>
+    <ion-label>{{movie.Title}}</ion-label>
+    <ion-buttons>
+      <ion-button (click)="handleFavorite(movie.imdbID, movie.Title, movie.Poster)">
+        <ion-icon class="cIcon" name="heart-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+  </ion-item>
+
+</ion-content>
+

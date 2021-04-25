@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<form>
+
+  <ion-item lines="full">
+    <ion-label position="floating">Email</ion-label>
+    <ion-input type="text" #email requerid></ion-input>
+  </ion-item>
+
+  <ion-item lines="full">
+    <ion-label position="floating">Password</ion-label>
+    <ion-input type="password" #password requerid></ion-input>
+  </ion-item>
+
+  <ion-row>
+    <ion-col>
+      <ion-button type="submit"
+                  (click)="onLogin(email, password)"
+                   expand="block">
+                   Log In
+      </ion-button>
+    </ion-col>
+  </ion-row>
+
+  <span class="divider line one-line"> or </span>
+
+  <ion-row>
+    <ion-col>
+      <ion-buttons class="btns_google">
+      <ion-button type="submit"
+                  (click)="onLoginGoogle()"
+                   >
+                   <ion-icon class="google" name="logo-google"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    </ion-col>
+  </ion-row>
+
+  <ion-row class="createAcount">
+    <ion-col>
+      <a href="/register">Create Account</a>
+    </ion-col>
+  </ion-row>
+
+  <ion-row class="forgot">
+    <ion-col>
+      <a href="/forgot-password">Forgot password? </a>
+    </ion-col>
+  </ion-row>
+
+</form>
+
+</ion-content>

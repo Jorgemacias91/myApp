@@ -1,0 +1,27 @@
+export interface Detail{
+  Title: string,
+  Poster : string,
+  Plot :string;
+  Actors:string,
+  Country:string,
+  Year:string,
+  imdbID:string,
+  Rated:string,
+  Released:string,
+  Runtime:string,
+  Genre:string,
+  Director:string,
+  Writer:string,
+  Language:string,
+  Awards:string,
+  Ratings:string,
+  Metascore:string,
+  imdbRating:string,
+  imdbVotes:string,
+  Type:string,
+  DVD:string,
+  BoxOffice:string,
+  Production:string,
+  Website:string,
+  Response:string
+}

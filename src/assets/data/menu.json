@@ -1,0 +1,22 @@
+[
+  {
+    "icon":"videocam-outline",
+    "name":"Movies",
+    "redirectTo" :"/list-movies"
+  },
+  {
+    "icon":"home-outline",
+    "name": "Home",
+    "redirectTo":"/home"
+  },
+  {
+    "icon":"log-out-outline",
+    "name":"LogOut",
+    "redirectTo":"/login"
+  },
+  {
+    "icon":"heart-outline",
+    "name":"Favorites",
+    "redirectTo":"/favorite"
+  }
+]

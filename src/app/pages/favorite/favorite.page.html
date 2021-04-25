@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button color="primary"
+                       menu="primerMenu">
+
+      </ion-menu-button>
+    </ion-buttons>
+    <ion-title>favorite</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item *ngFor="let favorite of moviesFavorite" >
+
+    <ion-thumbnail slot="start">
+      <img src={{favorite.Poster}} [routerLink]="['/list-movies', favorite.imdbID]" >
+    </ion-thumbnail>
+    <ion-label>{{favorite.Title}}</ion-label>
+
+  </ion-item>
+
+</ion-content>

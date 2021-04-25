@@ -1,0 +1,76 @@
+.movie{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #393131;
+}
+
+.cHeader{
+  display: flex;
+  align-self: flex-start;
+
+}
+
+.image{
+  width:150px;
+  height: 100%;
+}
+
+.cContent{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-self: center;
+
+
+}
+
+.cTitle{
+  color:#3a9ad1;
+  text-align: center;
+  font-size: 1.5em;
+ padding-top: 3%
+}
+
+
+.divContent{
+  display: flex;
+}
+
+.containerContent{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+}
+
+p{
+  color: white;
+font-size: 1.5em;
+text-align: center;
+}
+
+ion-buttons{
+  justify-content: center;
+}
+
+.cInput{
+  background-color: transparent;
+  color:white;
+  border-radius: 5%;
+  width:90%;
+  border:#3a9ad1 3px solid
+}
+
+.cForm{
+  display: flex;
+  padding:1rem;
+}
+.cIcon{
+  color:#3a9ad1;
+}
+
+.cHeart{
+  color:#3a9ad1
+}
+
