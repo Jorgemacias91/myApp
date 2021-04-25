@@ -1,3 +1,4 @@
+import { Detail } from './pages/list-movies/movie-detail/detail.model';
 import firebase from 'firebase/app';
 
 import { Componente } from './models/interface';
@@ -7,8 +8,8 @@ import { User } from './models/user';
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore'
 import { Observable, of } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
-import {AngularFireAuth} from '@angular/fire/auth'
-
+import {AngularFireAuth} from '@angular/fire/auth';
+import {AlertController} from '@ionic/angular'
 
 @Injectable({
   providedIn: 'root'
@@ -19,7 +20,7 @@ export class MoviesService {
 
   movieFavorite = [];
 
-  constructor(private http:HttpClient, public afAuth:AngularFireAuth, private afs:AngularFirestore) {
+  constructor(private http:HttpClient, public afAuth:AngularFireAuth, private afs:AngularFirestore, public alertController:AlertController) {
 
     this.user$ = this.afAuth.authState.pipe(
       switchMap((user) => {
@@ -36,7 +37,7 @@ export class MoviesService {
   }
 
   getMovieDetail(id){
-    return this.http.get<any>('http://www.omdbapi.com/?apikey=20dac387&i=' + id)
+    return this.http.get<Detail>('http://www.omdbapi.com/?apikey=20dac387&i=' + id)
   }
 
   getMovie(title){
@@ -93,6 +94,7 @@ export class MoviesService {
       }
       catch(error){
         console.log('Error-->', error)
+        this.presentAlert(error.message)
       }
     }
 
@@ -129,10 +131,14 @@ export class MoviesService {
      return userRef.set(data, {merge:true})
    }
 
+   async presentAlert(message) {
+    const alert = await this.alertController.create({
+      cssClass: 'my-custom-class',
+      header: 'Alert',
+      message: message,
+      buttons: ['OK']
+    });
+    await alert.present();
 }
-
-
-
-
-
+}
 

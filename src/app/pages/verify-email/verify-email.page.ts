@@ -2,6 +2,7 @@ import { MoviesService } from './../../movies.service';
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { User } from 'src/app/models/user';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-verify-email',
@@ -12,7 +13,7 @@ export class VerifyEmailPage implements OnInit {
 
   user$:Observable<User> = this.moviesService.afAuth.user;
 
-  constructor(private moviesService:MoviesService) { }
+  constructor(private moviesService:MoviesService, private router:Router) { }
 
   ngOnInit() {
   }
@@ -27,5 +28,9 @@ export class VerifyEmailPage implements OnInit {
 
   ngOnDestroy():void{
     this.moviesService.logout();
+  }
+
+  handleBack(){
+    this.router.navigate(['/login'])
   }
 }

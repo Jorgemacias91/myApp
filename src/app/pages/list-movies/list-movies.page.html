@@ -31,7 +31,7 @@
   <ion-item *ngFor="let movie of movies" >
 
     <ion-thumbnail slot="start">
-      <img src={{movie.Poster}} [routerLink]="['/list-movies', movie.imdbID]" >
+      <img src={{movie.Poster}} [routerLink]="['/list-movies/movie-detail/', movie.imdbID]" >
     </ion-thumbnail>
     <ion-label>{{movie.Title}}</ion-label>
     <ion-buttons>

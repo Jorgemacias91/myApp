@@ -1,4 +1,4 @@
-import { Detail } from './detail.model';
+
 import { MoviesService } from '../../../movies.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -12,7 +12,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class MovieDetailPage implements OnInit {
 
-  movieDetail:Detail;
+  movieDetail={};
 
   constructor(private activateRoute:ActivatedRoute, private moviesService:MoviesService, private router:Router) { }
 
@@ -20,13 +20,13 @@ export class MovieDetailPage implements OnInit {
     this.activateRoute.paramMap.subscribe(paramMap => {
       const idMovie = paramMap.get('id')
       console.log(idMovie)
-     this.moviesService.getMovieDetail(idMovie).subscribe(data => {
-       this.movieDetail = data
+
+    this.moviesService.getMovieDetail(idMovie).subscribe(data => {
+    this.movieDetail = data
        console.log(this.movieDetail)
 
-
-     })
     })
+  })
 
   }
 

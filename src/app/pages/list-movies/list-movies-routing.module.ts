@@ -8,10 +8,10 @@ const routes: Routes = [
     path: '',
     component: ListMoviesPage
   },
-  // {
-  //   path: 'movie-detail/:id',
-  //   loadChildren: () => import('./movie-detail/movie-detail.module').then( m => m.MovieDetailPageModule)
-  // }
+  {
+    path: 'movie-detail/:id',
+    loadChildren: () => import('./movie-detail/movie-detail.module').then( m => m.MovieDetailPageModule)
+  }
 ];
 
 @NgModule({

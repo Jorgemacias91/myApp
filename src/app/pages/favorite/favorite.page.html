@@ -17,6 +17,11 @@
       <img src={{favorite.Poster}} [routerLink]="['/list-movies', favorite.imdbID]" >
     </ion-thumbnail>
     <ion-label>{{favorite.Title}}</ion-label>
+    <ion-buttons slot="end">
+     <ion-button (click)="handleDelete(favorite.imdbID)">
+      <ion-icon class="delete" name="trash-outline"></ion-icon>
+     </ion-button>
+    </ion-buttons>
 
   </ion-item>
 

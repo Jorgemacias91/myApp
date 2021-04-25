@@ -26,7 +26,8 @@ export class LoginPage implements OnInit {
         this.redirectUser(isVerified)
       }
     } catch (error) {
-      console.log('Error-->', error)
+      console.log('Errorrr-->', error);
+
     }
   }
 
