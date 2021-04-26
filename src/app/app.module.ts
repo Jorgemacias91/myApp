@@ -2,7 +2,7 @@ import { MenuComponent } from './component/menu/menu.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy, RouterModule } from '@angular/router';
-
+import { ReactiveFormsModule} from '@angular/forms'
 
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 
@@ -21,6 +21,7 @@ import {AngularFireAuthModule} from '@angular/fire/auth'
     BrowserModule,
     IonicModule.forRoot(),
     AppRoutingModule,
+    ReactiveFormsModule,
     HttpClientModule,
     RouterModule,
     AngularFireModule.initializeApp(firebaseConfig),
